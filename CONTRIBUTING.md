@@ -13,13 +13,23 @@ This repo is part of the **Stellar Drips Wave Programme**. Contributions earn po
 ```bash
 git clone https://github.com/RubysWorld1/ChainCircle-Contracts.git
 cd ChainCircle-Contracts
+```
 
-# Build all contracts
+## Before Pushing — CI Checklist
+
+The CI pipeline will fail if any of these steps fail. Run them locally before pushing:
+
+```bash
+# 1. Make sure all contracts compile to WASM
 cargo build --target wasm32-unknown-unknown --release
 
-# Run all tests
+# 2. Run all contract tests
 cargo test
 ```
+
+**CI checks on every push/PR:**
+- `cargo build --target wasm32-unknown-unknown --release` — all contracts compile
+- `cargo test` — all tests pass
 
 ## Project Structure
 
@@ -55,6 +65,14 @@ test(microloan): add default detection test
 3. Open a PR against `develop`
 4. Fill in the PR template
 5. Request a review from a maintainer
+
+## General Rules
+
+- Always branch off `develop`, never commit directly to `main`
+- Branch name must follow the naming convention below
+- Fill in the PR template completely before submitting
+- Never commit secrets or credentials
+- If your issue has a `TODO` comment in the code, your PR must address that specific TODO
 
 ## Wave Bounty Issues
 
