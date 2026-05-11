@@ -1,6 +1,6 @@
 ---
 name: Feature Request
-about: Suggest a new feature for a ChainCircle contract
+about: Suggest a new feature for a SaveCircle contract
 title: '[FEATURE] '
 labels: enhancement
 assignees: ''

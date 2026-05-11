@@ -1,11 +1,11 @@
-# ChainCircle Contracts
+# SaveCircle Contracts
 
-[![CI](https://github.com/RubysDefi/ChainCircle-Contracts/actions/workflows/ci.yml/badge.svg)](https://github.com/RubysDefi/ChainCircle-Contracts/actions)
+[![CI](https://github.com/RubysDefi/SaveCircle-Contracts/actions/workflows/ci.yml/badge.svg)](https://github.com/RubysDefi/SaveCircle-Contracts/actions)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Overview
 
-ChainCircle Contracts is a Soroban-based smart contract workspace for community savings and lending circles on Stellar.
+SaveCircle Contracts is a Soroban-based smart contract workspace for community savings and lending circles on Stellar.
 
 This repository contains three modular contracts:
 
@@ -13,7 +13,7 @@ This repository contains three modular contracts:
 - `credit_score` — on-chain credit profile generation based on contribution and repayment history.
 - `microloan` — loan issuance, repayment tracking, and default handling.
 
-## Why ChainCircle?
+## Why SaveCircle?
 
 - Designed for community financial inclusion
 - Built on Stellar Soroban for secure on-chain execution
@@ -36,8 +36,8 @@ This repository contains three modular contracts:
 ## Quick Start
 
 ```bash
-git clone https://github.com/RubysDefi/ChainCircle-Contracts.git
-cd ChainCircle-Contracts
+git clone https://github.com/RubysDefi/SaveCircle-Contracts.git
+cd SaveCircle-Contracts
 rustup target add wasm32-unknown-unknown
 cargo install --locked soroban-cli
 cargo build --target wasm32-unknown-unknown --release

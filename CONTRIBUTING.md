@@ -1,6 +1,6 @@
-# Contributing to ChainCircle Contracts
+# Contributing to SaveCircle Contracts
 
-Thank you for contributing to ChainCircle Contracts. This repository is designed to support professional development, collaboration, and high-quality smart contract work on Stellar Soroban.
+Thank you for contributing to SaveCircle Contracts. This repository is designed to support professional development, collaboration, and high-quality smart contract work on Stellar Soroban.
 
 ## Prerequisites
 
@@ -17,8 +17,8 @@ Thank you for contributing to ChainCircle Contracts. This repository is designed
 ## Setup
 
 ```bash
-git clone https://github.com/RubysDefi/ChainCircle-Contracts.git
-cd ChainCircle-Contracts
+git clone https://github.com/RubysDefi/SaveCircle-Contracts.git
+cd SaveCircle-Contracts
 rustup target add wasm32-unknown-unknown
 cargo install --locked soroban-cli
 ```

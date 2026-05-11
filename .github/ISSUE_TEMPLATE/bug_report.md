@@ -1,6 +1,6 @@
 ---
 name: Bug Report
-about: Report a bug in a ChainCircle smart contract
+about: Report a bug in a SaveCircle smart contract
 title: '[BUG] '
 labels: bug
 assignees: ''
