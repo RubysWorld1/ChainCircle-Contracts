@@ -1,100 +1,105 @@
 # ChainCircle Contracts
 
-> **Save Together. Trust the Chain.**
-
-Soroban smart contracts for the ChainCircle platform — a Stellar-based community savings and lending circle system.
-
-[![CI](https://github.com/RubysWorld1/ChainCircle-Contracts/actions/workflows/ci.yml/badge.svg)](https://github.com/RubysWorld1/ChainCircle-Contracts/actions)
+[![CI](https://github.com/RubysDefi/ChainCircle-Contracts/actions/workflows/ci.yml/badge.svg)](https://github.com/RubysDefi/ChainCircle-Contracts/actions)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
----
+## Overview
 
-## Contracts
+ChainCircle Contracts is a Soroban-based smart contract workspace for community savings and lending circles on Stellar.
 
-| Contract | Description | Status |
-|---|---|---|
-| `savings_circle` | Core savings circle logic — create, contribute, payout rotation | 🚧 Scaffolded |
-| `credit_score` | On-chain credit scoring based on contribution and repayment history | 🚧 Scaffolded |
-| `microloan` | Microloan disbursement, repayment, and default tracking | 🚧 Scaffolded |
+This repository contains three modular contracts:
 
----
+- `savings_circle` — pooled saving groups with contribution tracking, withdrawals, and rotation logic.
+- `credit_score` — on-chain credit profile generation based on contribution and repayment history.
+- `microloan` — loan issuance, repayment tracking, and default handling.
 
-## Prerequisites
+## Why ChainCircle?
 
-- [Rust](https://www.rust-lang.org/tools/install) (stable)
-- WASM target:
+- Designed for community financial inclusion
+- Built on Stellar Soroban for secure on-chain execution
+- Modular workspace for independent contract development
+
+## Status
+
+| Contract | Status |
+|---|---|
+| `savings_circle` | Scaffolded / in development |
+| `credit_score` | Scaffolded / in development |
+| `microloan` | Scaffolded / in development |
+
+## Requirements
+
+- Rust stable toolchain
+- `wasm32-unknown-unknown` target
+- Soroban CLI
+
+## Quick Start
+
 ```bash
-rustup target add wasm32-unknown-unknown
-```
-- [Soroban CLI](https://soroban.stellar.org/docs/getting-started/setup):
-```bash
-cargo install --locked soroban-cli
-```
-
----
-
-## Getting Started
-
-```bash
-git clone https://github.com/RubysWorld1/ChainCircle-Contracts.git
+git clone https://github.com/RubysDefi/ChainCircle-Contracts.git
 cd ChainCircle-Contracts
-
-# Build all contracts
+rustup target add wasm32-unknown-unknown
+cargo install --locked soroban-cli
 cargo build --target wasm32-unknown-unknown --release
-
-# Run all tests
 cargo test
 ```
 
----
+## Development Workflow
 
-## Project Structure
+1. Create a feature branch from `main`:
+   - `feat/short-description`
+   - `fix/short-description`
+   - `test/short-description`
+2. Implement the contract logic or test coverage.
+3. Run formatting, build, and test checks.
+4. Open a pull request using the template in `.github/PULL_REQUEST_TEMPLATE.md`.
+
+## Structure
 
 ```
 contracts/
-├── savings_circle/
-│   ├── src/lib.rs       # Circle creation, contributions, payout rotation
-│   └── Cargo.toml
-├── credit_score/
-│   ├── src/lib.rs       # Score tracking, loan eligibility check
-│   └── Cargo.toml
-└── microloan/
-    ├── src/lib.rs       # Loan disbursement, repayment, default marking
-    └── Cargo.toml
-Cargo.toml               # Workspace config
+├── credit_score/     # On-chain scoring and eligibility logic
+├── microloan/        # Loan lifecycle and default tracking
+└── savings_circle/   # Community pool, contribution, and payout logic
+Cargo.toml            # Workspace configuration and shared dependencies
 ```
 
----
+## Local Commands
 
-## Open TODOs (Wave Bounty Issues)
+Build all contracts:
 
-These are scoped tasks available for contributors to earn Drips Wave rewards:
+```bash
+cargo build --target wasm32-unknown-unknown --release
+```
 
-| TODO | Contract | Complexity |
-|---|---|---|
-| Integrate Stellar token contract for contributions | `savings_circle` | Advanced |
-| Implement multi-sig approval before payout release | `savings_circle` | Advanced |
-| Cross-contract call to credit score on contribution | `savings_circle` | Intermediate |
-| Add oracle/admin verification before marking default | `microloan` | Intermediate |
-| Cross-contract call to credit score on repay/default | `microloan` | Intermediate |
-| Add multi-sig or oracle verification before penalizing | `credit_score` | Intermediate |
-| Write full test suite for all edge cases | All contracts | Beginner–Intermediate |
-| Deploy contracts to Stellar testnet + document addresses | All contracts | Beginner |
+Run tests:
 
----
+```bash
+cargo test
+```
 
-## Related Repositories
+Format Rust code:
 
-- [ChainCircle Backend](https://github.com/RubysWorld1/ChainCircle-Backend) — NestJS API
+```bash
+cargo fmt --all
+```
 
----
+Optional linting:
 
-## Contributing
+```bash
+cargo clippy --all -- -D warnings
+```
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
+## Contribution
 
----
+Please read [CONTRIBUTING.md](CONTRIBUTING.md) before submitting issues or pull requests.
+
+## Continuous Integration
+
+This repository runs GitHub Actions for every push and pull request targeting `main`.
+
+The CI workflow installs Rust and the Soroban CLI, builds the workspace for `wasm32-unknown-unknown`, and runs all tests.
 
 ## License
 
-[MIT](LICENSE)
+This project is licensed under the MIT License. See [LICENSE](LICENSE) for details.
